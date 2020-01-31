@@ -1,7 +1,7 @@
 #!/bin/bash
-echo $0
-echo $1
-echo $2
-echo $3
-echo $4
-echo $5
+if [[ ($1 = "-t" || $1 = "--template") && ($3 = "-r" || $3 = "--result") ]]; then
+	echo "rabotayet"
+else 
+	echo "Nea"
+fi
+
