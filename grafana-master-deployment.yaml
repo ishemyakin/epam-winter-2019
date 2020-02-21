@@ -1,0 +1,37 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: grafana-deployment
+  labels:
+    app: grafana
+  namespace: grafana
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+      role: monitor
+      tier: backend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: grafana
+        role: monitor
+        tier: backend
+    spec:
+      containers:
+       
+      - name: master
+        image: grafana/grafana:master-ubuntu  # or just image: 
+        env:
+        - name: "GF_INSTALL_PLUGINS"
+          valueFrom:
+            configMapKeyRef:
+              name: grafana
+              key: plugins
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 3000
