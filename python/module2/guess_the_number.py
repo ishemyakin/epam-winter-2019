@@ -1,6 +1,6 @@
 import random
 print("Загадано число от 1 до 100. Попытайтесь его угадать")
-the_number = int(random.randrange(1, 100))
+the_number = random.randrange(1, 100)
 user_guess = int(input())
 while user_guess != the_number:
     if user_guess < the_number:
