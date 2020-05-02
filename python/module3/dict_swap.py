@@ -6,5 +6,5 @@ def dict_swap(dict1):
     return dict2
 
 
-a = {'John': 'Name', 44: 'Age', 'DevOps': "JobTitle"}
-dict_swap(a)
+# a = {'John': 'Name', 44: 'Age', 'DevOps': "JobTitle"}
+# dict_swap(a)

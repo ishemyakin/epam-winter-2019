@@ -18,7 +18,6 @@ def swap_max_and_min(kek_list):
 
         in_list[list_min_pos] = list_max
         in_list[list_max_pos] = list_min
-    else:
 
 
 
